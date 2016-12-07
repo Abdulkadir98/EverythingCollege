@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hp.main">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="EverythingCollege"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".topHundredActivity"
+            android:label="Top100"/>
+        <activity android:name=".searchActivity"
+            android:label="Search A College"/>
+        <activity android:name=".examsActivity"
+            android:label="Entrance Exams"/>
+        <activity android:name=".eligibilityActivity"
+            android:label="ELigiblity"/>
+        <activity android:name=".scholarshipActivity"
+            android:label="Scholarships"/>
+    </application>
+
+</manifest>

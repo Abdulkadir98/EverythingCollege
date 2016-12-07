@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:layout_weight="1"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text = "1."
+        android:textSize="16sp"
+        android:layout_weight="1"
+        android:id="@+id/rank_text_view"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        tools:text="Name of University"
+        android:textSize="16sp"
+        android:layout_weight="1"
+        android:id="@+id/name_text_view"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/place_text_view"
+        android:layout_weight="1"
+        tools:text="Place"/>
+
+</LinearLayout>
