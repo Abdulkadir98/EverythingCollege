@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import static android.R.attr.start;
+import static com.example.hp.main.R.drawable.state;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView examsImage = (ImageView)findViewById(R.id.entrance_exams);
         ImageView eligibilityImage = (ImageView)findViewById(R.id.eligibilty);
         ImageView scholarshipImage = (ImageView)findViewById(R.id.scholarship_exams);
+        ImageView stateImage= (ImageView) findViewById(R.id.state_colleges); //new image view for state
 
         if(topHundredImage!=null){
 
@@ -29,6 +33,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+        }
+        if(stateImage!=null) //new listner for the same
+        {
+            stateImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent= new Intent(MainActivity.this,states_intro.class);
+                    startActivity(intent);
+
+                }
+
+
+
+
+        });
         }
 
         if (searchImage!=null){

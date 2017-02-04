@@ -8,9 +8,10 @@
         android:label="EverythingCollege"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".SplashScreen"
             android:noHistory="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +33,9 @@
         <activity
             android:name=".scholarshipActivity"
             android:label="Scholarships" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".stateActivity" />
+        <activity android:name=".states_intro"></activity>
     </application>
 
 </manifest>
