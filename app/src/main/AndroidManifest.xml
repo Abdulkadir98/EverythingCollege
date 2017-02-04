@@ -8,23 +8,31 @@
         android:label="EverythingCollege"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen"
+            android:noHistory="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".topHundredActivity"
-            android:label="Top100"/>
-        <activity android:name=".searchActivity"
-            android:label="Search A College"/>
-        <activity android:name=".examsActivity"
-            android:label="Entrance Exams"/>
-        <activity android:name=".eligibilityActivity"
-            android:label="ELigiblity"/>
-        <activity android:name=".scholarshipActivity"
-            android:label="Scholarships"/>
+        <activity
+            android:name=".topHundredActivity"
+            android:label="Top100" />
+        <activity
+            android:name=".searchActivity"
+            android:label="Search A College" />
+        <activity
+            android:name=".examsActivity"
+            android:label="Entrance Exams" />
+        <activity
+            android:name=".eligibilityActivity"
+            android:label="ELigiblity" />
+        <activity
+            android:name=".scholarshipActivity"
+            android:label="Scholarships" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

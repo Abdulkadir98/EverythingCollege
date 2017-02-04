@@ -1,0 +1,29 @@
+package com.example.hp.main;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+public class SplashScreen extends AppCompatActivity {
+    private static final int SPLASH_TIME = 3000;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash_screen);
+
+        Thread th= new Thread(){
+            @Override
+            public void run() {
+                try {
+                    sleep(3000);
+                    Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        th.start();
+    }
+}
