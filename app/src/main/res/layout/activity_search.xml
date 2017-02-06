@@ -9,4 +9,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.hp.main.searchActivity">
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:id="@+id/textView2"
+        tools:text="Enter College Name:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:id="@+id/College"
+        android:hint="     Enter College Name" />
+
+    <Button
+        android:text="Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/College"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="103dp"
+        android:id="@+id/Enter"/>
 </RelativeLayout>

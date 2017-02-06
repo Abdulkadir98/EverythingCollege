@@ -44,6 +44,7 @@ public class topHundredActivity extends AppCompatActivity {
         top100.add(new topHundred(23,"Delhi University","Delhi"));
         top100.add(new topHundred(24,"Manipal University","Manipal"));
         top100.add(new topHundred(25,"Amrita University","Coimbatore"));
+
         topHundreduniversitiesAdapter Adapter = new topHundreduniversitiesAdapter(this,top100);
 
         ListView listView = (ListView)findViewById(R.id.list);

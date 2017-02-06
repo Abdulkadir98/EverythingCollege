@@ -6,23 +6,28 @@ import android.net.Uri;
  * Created by admin on 11/24/2016.
  */
 public class topHundred {
-    private String mUniversityName;
-    private int mRank;
-    private String mPlace;
-    private Uri mWebsiteUrl;
-    public topHundred(int rank, String name, String place){
-        mRank = rank;
-        mUniversityName  = name;
-        mPlace = place;
+    public String mUniversityName;
+    public int mRank;
+    public String mPlace;
+    public Uri mUrl;
+    public topHundred()
+    {
+
     }
 
-    public topHundred(int rank, String name, String place, Uri url){
+
+    public topHundred(int rank, String name, String place){
         mRank = rank;
         mUniversityName = name;
         mPlace = place;
-        mWebsiteUrl = url;
     }
 
+    public topHundred(int rank, String name, String place,Uri Url){
+        mRank = rank;
+        mUniversityName = name;
+        mPlace = place;
+        mUrl = Url;
+    }
     public int  getRank(){
         return mRank;
     }
@@ -33,6 +38,6 @@ public class topHundred {
         return mPlace;
     }
     public Uri getUrl(){
-        return mWebsiteUrl;
+        return mUrl;
     }
 }

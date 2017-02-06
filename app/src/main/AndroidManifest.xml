@@ -35,7 +35,8 @@
             android:label="Scholarships" />
         <activity android:name=".MainActivity" />
         <activity android:name=".stateActivity" />
-        <activity android:name=".states_intro"></activity>
+        <activity android:name=".states_intro" />
+        <activity android:name=".SearchResult"></activity>
     </application>
 
 </manifest>
