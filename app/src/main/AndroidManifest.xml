@@ -29,7 +29,7 @@
             android:label="Entrance Exams" />
         <activity
             android:name=".eligibilityActivity"
-            android:label="ELigiblity" />
+            android:label="Eligiblity" />
         <activity
             android:name=".scholarshipActivity"
             android:label="Scholarships" />

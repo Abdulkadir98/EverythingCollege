@@ -18,6 +18,7 @@ public class topHundreduniversitiesAdapter extends ArrayAdapter<topHundred> {
         super(context, 0, top100);
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View listItemView = convertView;

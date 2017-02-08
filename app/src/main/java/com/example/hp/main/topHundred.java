@@ -15,7 +15,6 @@ public class topHundred {
 
     }
 
-
     public topHundred(int rank, String name, String place){
         mRank = rank;
         mUniversityName = name;
@@ -39,5 +38,18 @@ public class topHundred {
     }
     public Uri getUrl(){
         return mUrl;
+    }
+    public static class Scholarship{
+        private String fieldOfStudy, scholarshipTest;
+        public Scholarship(String field, String test){
+            fieldOfStudy = field;
+            scholarshipTest = test;
+        }
+        public String getFieldOfStudy(){
+            return fieldOfStudy;
+        }
+        public String getScholarshipTest(){
+            return scholarshipTest;
+        }
     }
 }
