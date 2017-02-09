@@ -51,5 +51,20 @@ public class topHundred {
         public String getScholarshipTest(){
             return scholarshipTest;
         }
+
+    }
+    public static class Exams{
+        private String exam;
+        private Uri examUri;
+        public Exams(String exam, Uri examUri){
+            this.exam = exam;
+            this.examUri = examUri;
+        }
+        public Uri getUrl(){
+            return examUri;
+        }
+        public String getExam(){
+            return exam;
+        }
     }
 }
