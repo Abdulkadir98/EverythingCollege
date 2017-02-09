@@ -22,6 +22,7 @@ public class scholarshipActivity extends AppCompatActivity {
         scholarship.add(new topHundred.Scholarship("Engineering", "IET India scholarship 2017"));
         scholarship.add(new topHundred.Scholarship("MEdicine", "JBNSTS"));
 
+
 scholarshipsAdapter Adapter = new scholarshipsAdapter(this, scholarship);
         ListView listView = (ListView)findViewById(R.id.list_scholarship);
         listView.setAdapter(Adapter);
