@@ -9,34 +9,53 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.hp.main.searchActivity">
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        android:id="@+id/spinnercity" />
+
     <TextView
-        android:text="TextView"
+        android:text="Colleges:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_below="@+id/spinnercity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:text="City:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
         android:id="@+id/textView2"
-        tools:text="Enter College Name:"
+        tools:text="City:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:ems="10"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
-        android:id="@+id/College"
-        android:hint="     Enter College Name" />
-
     <Button
-        android:text="Enter"
-        android:layout_width="wrap_content"
+        android:text="Go"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/College"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="103dp"
-        android:id="@+id/Enter"/>
+        android:id="@+id/button2"
+        android:layout_marginBottom="20dp"
+        android:layout_width="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:id="@+id/spinnercollege"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:contextClickable="true"
+        />
+
 </RelativeLayout>

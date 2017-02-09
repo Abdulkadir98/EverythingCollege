@@ -41,7 +41,8 @@ public class elgibilityAdapter extends AppCompatActivity {
         topHundreduniversitiesAdapter Adapter = new topHundreduniversitiesAdapter(this,eli);
 
         ListView listView = (ListView)findViewById(R.id.list);
-        mydatabase.close();
+
         listView.setAdapter(Adapter);
+        mydatabase.close();
         }
 }
