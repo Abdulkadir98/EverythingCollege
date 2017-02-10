@@ -26,6 +26,8 @@ public class scholarshipActivity extends AppCompatActivity {
 scholarshipsAdapter Adapter = new scholarshipsAdapter(this, scholarship);
         ListView listView = (ListView)findViewById(R.id.list_scholarship);
         listView.setAdapter(Adapter);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
 }

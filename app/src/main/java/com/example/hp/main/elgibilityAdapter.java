@@ -2,10 +2,9 @@ package com.example.hp.main;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -59,5 +58,7 @@ public class elgibilityAdapter extends AppCompatActivity {
 
         }
         mydatabase.close();
-        }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
 }

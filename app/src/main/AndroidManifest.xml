@@ -20,23 +20,29 @@
         </activity>
         <activity
             android:name=".topHundredActivity"
-            android:label="Top100" />
+            android:label="Top100"
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity
             android:name=".searchActivity"
-            android:label="Search A College" />
+            android:label="Search A College"
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity
             android:name=".examsActivity"
-            android:label="Entrance Exams" />
+            android:label="Entrance Exams"
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity
             android:name=".eligibilityActivity"
-            android:label="Eligiblity" />
+            android:label="Eligiblity"
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity
             android:name=".scholarshipActivity"
-            android:label="Scholarships" />
+            android:label="Scholarships"
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".stateActivity" />
         <activity android:name=".states_intro" />
-        <activity android:name=".SearchResult"/>
+        <activity android:name=".SearchResult"
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
             <activity android:name=".elgibilityAdapter"></activity>
 
     </application>

@@ -59,5 +59,6 @@ public class topHundredActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

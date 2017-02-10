@@ -1,27 +1,17 @@
 package com.example.hp.main;
 
-import android.support.v7.app.AppCompatActivity;
-
-
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.hp.main.R.drawable.top100;
 
 public class searchActivity extends AppCompatActivity {
 
@@ -119,6 +109,8 @@ b.setOnClickListener(new View.OnClickListener() {
 
     }
 });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
 

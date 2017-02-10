@@ -43,6 +43,7 @@ public class examsActivity extends AppCompatActivity {
             }
         });
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
     }
