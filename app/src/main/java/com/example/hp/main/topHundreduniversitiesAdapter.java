@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 import java.util.ArrayList;
 
 /**
@@ -29,12 +31,16 @@ public class topHundreduniversitiesAdapter extends ArrayAdapter<topHundred> {
         topHundred currentUniversity = getItem(position);
         TextView rankTextView = (TextView)listItemView.findViewById(R.id.rank_text_view);
         rankTextView.setText(currentUniversity.getRank()+"");
+        rankTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
 
         TextView nameTextView = (TextView)listItemView.findViewById(R.id.name_text_view);
         nameTextView.setText(currentUniversity.getUniversityName());
+        nameTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
 
         TextView placeTextView = (TextView)listItemView.findViewById(R.id.place_text_view);
         placeTextView.setText(currentUniversity.getPlace());
+        placeTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
+
         return listItemView;
     }
 }

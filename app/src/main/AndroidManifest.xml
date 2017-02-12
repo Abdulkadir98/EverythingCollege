@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hp.main">
 
     <application
@@ -7,7 +8,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="EverythingCollege"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
         <activity
             android:name=".SplashScreen"
             android:noHistory="true"
@@ -34,6 +36,7 @@
             android:name=".eligibilityActivity"
             android:label="Eligiblity"
             android:parentActivityName="com.example.hp.main.MainActivity"/>
+        <activity android:name="com.example.hp.main.elgibilityAdapter"/>
         <activity
             android:name=".scholarshipActivity"
             android:label="Scholarships"

@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 import java.util.ArrayList;
 
 /**
@@ -30,6 +32,8 @@ public class examsAdapter extends ArrayAdapter<topHundred.Exams> {
         topHundred.Exams exam = getItem(position);
         TextView examTextView = (TextView)listItemView.findViewById(R.id.exam_text_view);
         examTextView.setText(exam.getExam());
+        examTextView.setTypeface(EasyFonts.androidNationBold(getContext()));
+
         return listItemView;
     }
 }

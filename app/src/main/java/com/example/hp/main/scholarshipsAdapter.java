@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 import java.util.ArrayList;
 
 /**
@@ -30,6 +32,7 @@ public class scholarshipsAdapter extends ArrayAdapter<topHundred.Scholarship> {
             topHundred.Scholarship scholarship = getItem(position);
             TextView scholarshipExam = (TextView)listItemView.findViewById(R.id.scholarship_exams);
             scholarshipExam.setText(scholarship.getScholarshipTest());
+        scholarshipExam.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
 
             return listItemView;
 

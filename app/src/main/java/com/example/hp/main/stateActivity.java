@@ -12,7 +12,7 @@ public class stateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_state);
+        setContentView(R.layout.list_view);
         String title= getIntent().getStringExtra("title");
         setTitle("Top colleges in "+ title);
         Log.v("Myactivity",title);

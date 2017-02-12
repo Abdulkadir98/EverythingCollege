@@ -16,7 +16,7 @@ public class elgibilityAdapter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_elgibility_adapter);
+        setContentView(R.layout.list_view);
 
 
         cutoff1=getIntent().getIntExtra("Number", 0);

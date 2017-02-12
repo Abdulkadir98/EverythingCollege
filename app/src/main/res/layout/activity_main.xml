@@ -1,84 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
     tools:context="com.example.hp.main.MainActivity">
-
-
-    <LinearLayout
+    <android.support.design.widget.TabLayout
+        android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:weightSum="1">
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:src="@drawable/top100"
-                android:text="Top100"
-                android:layout_marginTop="40dp"
-                android:textAlignment="center"
-                android:id="@+id/top_hundred"/>
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="16dp"
-                android:layout_gravity="center"
-                android:src="@drawable/search"
-                android:text="Search"
-                android:id="@+id/search"/>
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:background="@drawable/entranceexam"
-                android:text="EXAMS"
-                android:id="@+id/entrance_exams"/>
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        app:tabMode="fixed" />
 
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:id="@+id/state_colleges"
-                android:layout_marginTop="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/state"
-                android:onClick="topStateColleges"/>
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:src="@drawable/eligibility"
-                android:id="@+id/eligibilty"/>
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:src="@drawable/scholarship"
-                android:textColor="#ffffff"
-                android:id="@+id/scholarship_exams"/>
-        </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"/>
 
-    </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
 
 

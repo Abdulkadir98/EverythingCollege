@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text = "1."
-        android:textSize="16sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_weight="1"
         android:id="@+id/rank_text_view"
         />
@@ -20,9 +20,10 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         tools:text="Name of University"
-        android:textSize="16sp"
         android:layout_weight="1"
-        android:id="@+id/name_text_view"/>
+        android:id="@+id/name_text_view"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:maxLines="2"/>
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -30,6 +31,8 @@
         android:layout_marginStart="16dp"
         android:id="@+id/place_text_view"
         android:layout_weight="1"
-        tools:text="Place"/>
+        tools:text="Place"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        />
 
 </LinearLayout>
