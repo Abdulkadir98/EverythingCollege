@@ -10,11 +10,13 @@ import android.widget.TextView;
 import com.vstechlab.easyfonts.EasyFonts;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by admin on 11/24/2016.
  */
 public class topHundreduniversitiesAdapter extends ArrayAdapter<topHundred> {
+    private ArrayList<topHundred> top100 = new ArrayList<>();
 
     public topHundreduniversitiesAdapter(Activity context, ArrayList<topHundred> top100){
         super(context, 0, top100);
@@ -42,6 +44,10 @@ public class topHundreduniversitiesAdapter extends ArrayAdapter<topHundred> {
         placeTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
 
         return listItemView;
+    }
+    public void setColleges(List<topHundred> data) {
+        top100.addAll(data);
+        notifyDataSetChanged();
     }
 }
 

@@ -14,6 +14,10 @@ public class topHundred {
     {
 
     }
+    public topHundred(int rank, String name){
+        mRank = rank;
+        mUniversityName = name;
+    }
 
     public topHundred(int rank, String name, String place){
         mRank = rank;

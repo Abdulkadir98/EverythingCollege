@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
-    private String tabTitles[] = new String[]{"Top25", "Search", "Eligibility", "EntranceTests", "Scholarships"};
+    private String tabTitles[] = new String[]{"Top25", "Search", "Eligibility", "Scholarships"};
     public SimpleFragmentPagerAdapter(FragmentManager fm){
         super(fm);
     }
@@ -19,19 +19,18 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
             case 0: return new topHundredFragment();
             case 1: return new searchFragment();
             case 2: return new eligibilityFragment();
-            case 3: return new examsFragment();
-            case 4: return new scholarshipsFragment();
+            case 3: return new scholarshipsFragment();
             default: throw new IllegalArgumentException("Cannot find Fragment");
         }
     }
 
     @Override
     public int getCount() {
-        return 5;
+        return 4;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return tabTitles[position];
-    }
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        return tabTitles[position];
+//    }
 }
