@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "542445521102",
+    "firebase_url": "https://everythingcollege-190e0.firebaseio.com",
+    "project_id": "everythingcollege-190e0",
+    "storage_bucket": "everythingcollege-190e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542445521102:android:164c1d92d1672d42",
+        "android_client_info": {
+          "package_name": "com.example.hp.main"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542445521102-qe1a25g6vn2nhv0frfguue30id23ehev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp.main",
+            "certificate_hash": "9617294467581C253D5BBE720D757B1FCFC1DB4A"
+          }
+        },
+        {
+          "client_id": "542445521102-pqgd8thic06r3gi495eeu7nohj6vt0p4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy836-l3qYBDlYLetb13Ugug0OmrWD8Xw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542445521102-pqgd8thic06r3gi495eeu7nohj6vt0p4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
