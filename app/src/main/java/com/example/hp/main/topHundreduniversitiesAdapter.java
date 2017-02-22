@@ -20,6 +20,7 @@ public class topHundreduniversitiesAdapter extends ArrayAdapter<topHundred> {
 
     public topHundreduniversitiesAdapter(Activity context, ArrayList<topHundred> top100){
         super(context, 0, top100);
+        this.top100 = top100;
     }
 
 
@@ -39,13 +40,16 @@ public class topHundreduniversitiesAdapter extends ArrayAdapter<topHundred> {
         nameTextView.setText(currentUniversity.getUniversityName());
         nameTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
 
-        TextView placeTextView = (TextView)listItemView.findViewById(R.id.place_text_view);
-        placeTextView.setText(currentUniversity.getPlace());
-        placeTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
+//        TextView placeTextView = (TextView)listItemView.findViewById(R.id.place_text_view);
+//        placeTextView.setText(currentUniversity.getPlace());
+//        placeTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
 
         return listItemView;
     }
     public void setColleges(List<topHundred> data) {
+        if(data==null){
+            return;
+        }
         top100.addAll(data);
         notifyDataSetChanged();
     }
