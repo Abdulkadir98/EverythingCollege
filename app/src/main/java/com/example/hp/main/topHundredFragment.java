@@ -1,6 +1,8 @@
 package com.example.hp.main;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -8,6 +10,7 @@ import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -17,7 +20,7 @@ import java.util.ArrayList;
  */
 public class topHundredFragment extends Fragment implements LoaderManager.LoaderCallbacks<ArrayList<topHundred>>{
     private topHundreduniversitiesAdapter mAdapter;
-
+private ArrayList<topHundred> top25;
 
 
     public topHundredFragment() {
@@ -28,8 +31,7 @@ public class topHundredFragment extends Fragment implements LoaderManager.Loader
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.list_view, container, false);
-        final ArrayList<topHundred> top100 = new ArrayList<topHundred>();
+        final View rootView = inflater.inflate(R.layout.list_view, container, false);
 //        top100.add(new topHundred(1, "IIT Kanpur","Kanpur", Uri.parse("http://iitk.ac.in/")));
 //        top100.add(new topHundred(2,"Indian Institute of Science","Bangalore",Uri.parse("http://www.iisc.ac.in/")));
 //        top100.add(new topHundred(3,"Jawaharlal Nehru University","Delhi",Uri.parse("www.jnu.ac.in/")));
@@ -56,21 +58,22 @@ public class topHundredFragment extends Fragment implements LoaderManager.Loader
 //        top100.add(new topHundred(24,"Manipal University","Manipal"));
 //        top100.add(new topHundred(25,"Amrita University","Coimbatore"));
 
-        topHundreduniversitiesAdapter Adapter = new topHundreduniversitiesAdapter(getActivity(),top100);
+        top25 = new ArrayList<>();
+        mAdapter = new topHundreduniversitiesAdapter(getActivity(),new ArrayList<topHundred>());
 
         ListView listView = (ListView)rootView.findViewById(R.id.list);
-        listView.setAdapter(Adapter);
+        listView.setAdapter(mAdapter);
        //TODO Initialise the Loader here
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long Id) {
-//                topHundred top = top100.get(position);
-//                Uri uri = top.getUrl();
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                topHundred topHundred = top25.get(i);
+//                Uri uri = topHundred.getUrl();
 //                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 //                startActivity(intent);
 //            }
 //        });
-
+        getLoaderManager().initLoader(0, null, this).forceLoad();
         return rootView;
     }
 
