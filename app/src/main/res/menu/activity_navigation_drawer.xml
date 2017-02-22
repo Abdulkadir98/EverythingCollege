@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_list_item"
+
+            android:title="Top25" />
+        <item
+            android:id="@+id/nav_activity_search"
+
+            android:title="Search" />
+        <item
+            android:id="@+id/nav_activity_eligibility"
+
+            android:title="Eligibility" />
+        <item
+            android:id="@+id/nav_activity_entrance"
+
+            android:title="Entrance Exams" />
+        <item
+            android:id="@+id/nav_list_item_scholarship"
+
+            android:title="Scholarship" />
+    </group>
+
+
+
+</menu>
