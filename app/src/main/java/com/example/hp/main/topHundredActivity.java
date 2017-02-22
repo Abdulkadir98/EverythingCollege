@@ -3,7 +3,7 @@ package com.example.hp.main;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class topHundredActivity extends AppCompatActivity {
+public class topHundredActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,4 +16,6 @@ public class topHundredActivity extends AppCompatActivity {
                 .commit();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+
 }

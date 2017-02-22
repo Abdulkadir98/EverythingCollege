@@ -2,13 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hp.main">
-    <uses-sdk tools:overrideLibrary="com.firebase.ui,com.firebase.ui.auth,com.facebook,android.support.customtabs"
-
-
-
-        />
-
-
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,32 +23,30 @@
         <activity
             android:name=".topHundredActivity"
             android:label="Top100"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity
             android:name=".searchActivity"
             android:label="Search A College"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity
             android:name=".examsActivity"
             android:label="Entrance Exams"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity
             android:name=".eligibilityActivity"
             android:label="Eligiblity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".elgibilityAdapter" />
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
+        <activity android:name="com.example.hp.main.elgibilityAdapter"/>
         <activity
             android:name=".scholarshipActivity"
             android:label="Scholarships"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".stateActivity" />
         <activity android:name=".states_intro" />
-        <activity
-            android:name=".SearchResult"
-            android:parentActivityName=".MainActivity" />
-
-        <activity android:name=".Signin"></activity>
+        <activity android:name=".SearchResult"
+            android:parentActivityName="com.example.hp.main.MainActivity"/>
+        <service android:name="com.example.hp.main.MyIntentService"/>
     </application>
 
 </manifest>
