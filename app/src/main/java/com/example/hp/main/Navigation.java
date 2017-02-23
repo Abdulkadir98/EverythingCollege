@@ -1,5 +1,6 @@
 package com.example.hp.main;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -20,15 +21,18 @@ import android.widget.ImageView;
 
 public class Navigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    boolean FragmentTransaction=false;
+    static int i=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
-        if (savedInstanceState == null) {
+        if(savedInstanceState==null)
+        {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, cardviewfragement.newInstance())
                     .commit();
+
         }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -43,6 +47,7 @@ public class Navigation extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -80,20 +85,32 @@ public class Navigation extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-         FragmentManager f= getSupportFragmentManager();
 
+        Intent intent;
+         FragmentManager f= getSupportFragmentManager();
+        if(i==1)
+        {
+            getSupportFragmentManager()
+                    .beginTransaction().
+                    remove(getSupportFragmentManager().findFragmentById(R.id.container)).commit();
+        }
+          i--;
         if (id == R.id.nav_list_item) {
-             f.beginTransaction().replace(R.id.content_frame, new topHundredFragment()).commit();
+
+            f.beginTransaction().replace(R.id.content_frame, new topHundredFragment()).commit();
 
         } else if (id == R.id.nav_activity_search) {
+
             f.beginTransaction().replace(R.id.content_frame, new searchFragment()).commit();
 
 
         } else if (id == R.id.nav_activity_eligibility) {
+
             f.beginTransaction().replace(R.id.content_frame, new eligibilityFragment()).commit();
 
 
         } else if (id == R.id.nav_activity_entrance) {
+
             f.beginTransaction().replace(R.id.content_frame, new examsFragment()).commit();
 
         } else if (id == R.id.nav_list_item_scholarship) {
@@ -101,8 +118,11 @@ public class Navigation extends AppCompatActivity
 
         }
 
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
+
     }
 }
