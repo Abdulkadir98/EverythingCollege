@@ -9,4 +9,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="cardview_radius_seekbar_text">Radius</string>
+    <string name="cardview_elevation_seekbar_text">Elevation</string>
+    <string name="cardview_contents"> <font fgcolor="#FFFFFFFF">
+        </font>
+        <font fgcolor="#FFFFFFFF"></font>
+    </string>
 </resources>
