@@ -1,17 +1,14 @@
 package com.example.hp.main;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
-import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,8 +33,7 @@ public class cardviewfragement extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public cardviewfragement() {
-        // Required empty public const
-        // ructor
+        // Required empty public constructor
     }
 
 

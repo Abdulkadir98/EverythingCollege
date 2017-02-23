@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hp.main">
 
-    <uses-sdk tools:overrideLibrary="com.firebase.ui,com.firebase.ui.auth,com.facebook,android.support.customtabs" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"

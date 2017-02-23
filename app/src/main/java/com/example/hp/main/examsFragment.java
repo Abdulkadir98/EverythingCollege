@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ import java.util.ArrayList;
  */
 public class examsFragment extends Fragment {
     String srmUrl , vitUrl, iitUrl;
+    private ProgressBar mProgressBar;
 
 
     public examsFragment() {
@@ -33,6 +35,9 @@ public class examsFragment extends Fragment {
         vitUrl = "www.vit.ac.in/admissions/viteee/";
         srmUrl = "www.srmuniv.ac.in/";
         iitUrl = "jeemain.nic.in/";
+
+        mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
+        mProgressBar.setVisibility(View.GONE);
 
         final ArrayList<topHundred.Exams> exams = new ArrayList<>();
         exams.add(new topHundred.Exams("SRMJEE", Uri.parse("http://www.srmuniv.ac.in/")));
