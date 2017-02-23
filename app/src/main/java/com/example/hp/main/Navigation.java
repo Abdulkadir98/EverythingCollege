@@ -20,7 +20,7 @@ import android.widget.ImageView;
 
 public class Navigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+static int i=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +81,13 @@ public class Navigation extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
          FragmentManager f= getSupportFragmentManager();
+        if(i==1)
+        {
+            getSupportFragmentManager()
+                    .beginTransaction().
+                    remove(getSupportFragmentManager().findFragmentById(R.id.container)).commit();
+        }
+        i--;
 
         if (id == R.id.nav_list_item) {
              f.beginTransaction().replace(R.id.content_frame, new topHundredFragment()).commit();
