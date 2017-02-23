@@ -4,14 +4,20 @@ package com.example.hp.main;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,12 +27,18 @@ import java.util.ArrayList;
 public class topHundredFragment extends Fragment implements LoaderManager.LoaderCallbacks<ArrayList<topHundred>>{
     private topHundreduniversitiesAdapter mAdapter;
 private ArrayList<topHundred> top25;
-
+private TextView emptyView;
+    private ProgressBar mProgressBar;
 
     public topHundredFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,9 +72,12 @@ private ArrayList<topHundred> top25;
 
         top25 = new ArrayList<>();
         mAdapter = new topHundreduniversitiesAdapter(getActivity(),new ArrayList<topHundred>());
+        mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
 
         ListView listView = (ListView)rootView.findViewById(R.id.list);
         listView.setAdapter(mAdapter);
+         emptyView = (TextView)rootView.findViewById(R.id.no_internet_connection);
+        listView.setEmptyView(emptyView);
        //TODO Initialise the Loader here
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -74,6 +89,7 @@ private ArrayList<topHundred> top25;
 //            }
 //        });
         getLoaderManager().initLoader(0, null, this).forceLoad();
+        setHasOptionsMenu(true);
         return rootView;
     }
 
@@ -84,11 +100,30 @@ private ArrayList<topHundred> top25;
 
     @Override
     public void onLoadFinished(Loader<ArrayList<topHundred>> loader, ArrayList<topHundred> data) {
-mAdapter.setColleges(data);
+        emptyView.setText("No Internet Connection");
+
+        mAdapter.setColleges(data);
+        mProgressBar.setVisibility(View.GONE);
+
     }
 
     @Override
     public void onLoaderReset(Loader<ArrayList<topHundred>> loader) {
      mAdapter.setColleges(new ArrayList<topHundred>());
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.everythingcollege_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()== R.menu.everythingcollege_menu){
+            getLoaderManager().restartLoader(0, null, this).forceLoad();
+
+        }return true;
     }
 }
