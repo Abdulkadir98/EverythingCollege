@@ -86,6 +86,8 @@ private TextView emptyView;
                 Uri uri = topHundred.getUrl();
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
+
+                //List View - URL
             }
         });
         getLoaderManager().initLoader(0, null, this).forceLoad();
