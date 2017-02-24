@@ -28,6 +28,7 @@ public class topHundredFragment extends Fragment implements LoaderManager.Loader
     private topHundreduniversitiesAdapter mAdapter;
 private ArrayList<topHundred> top25;
 private TextView emptyView;
+    ListView listView;
     private ProgressBar mProgressBar;
 
     public topHundredFragment() {
@@ -74,7 +75,7 @@ private TextView emptyView;
         mAdapter = new topHundreduniversitiesAdapter(getActivity(),new ArrayList<topHundred>());
         mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
 
-        ListView listView = (ListView)rootView.findViewById(R.id.list);
+        listView = (ListView)rootView.findViewById(R.id.list);
         listView.setAdapter(mAdapter);
          emptyView = (TextView)rootView.findViewById(R.id.no_internet_connection);
         listView.setEmptyView(emptyView);
@@ -84,7 +85,7 @@ private TextView emptyView;
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 topHundred topHundred = top25.get(i);
                 Uri uri = topHundred.getUrl();
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://"+uri.toString()));
                 startActivity(intent);
 
                 //List View - URL
@@ -105,6 +106,8 @@ private TextView emptyView;
         emptyView.setText("No Internet Connection");
 
         mAdapter.setColleges(data);
+
+        top25 = data;
         mProgressBar.setVisibility(View.GONE);
 
     }
