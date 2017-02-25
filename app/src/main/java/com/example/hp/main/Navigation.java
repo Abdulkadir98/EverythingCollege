@@ -1,13 +1,9 @@
 package com.example.hp.main;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.app.FragmentManager;
 import android.widget.ImageView;
 
 public class Navigation extends AppCompatActivity
@@ -106,6 +101,9 @@ static int i=1;
         } else if (id == R.id.nav_list_item_scholarship) {
             f.beginTransaction().replace(R.id.content_frame, new scholarshipsFragment()).commit();
 
+        }
+        else if (id== R.id.nav_activity_predicter){
+            f.beginTransaction().replace(R.id.content_frame, new PredicterFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

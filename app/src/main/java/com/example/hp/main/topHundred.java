@@ -25,10 +25,11 @@ public class topHundred {
         mPlace = place;
     }
 
-    public topHundred(int rank, String name,Uri Url){
+    public topHundred(int rank, String name, String place,Uri Url){
         mRank = rank;
         mUniversityName = name;
         mUrl = Url;
+        mPlace = place;
     }
     public int  getRank(){
         return mRank;

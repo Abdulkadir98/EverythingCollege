@@ -22,6 +22,9 @@
             android:id="@+id/nav_list_item_scholarship"
 
             android:title="Scholarship" />
+        <item
+            android:id="@+id/nav_activity_predicter"
+            android:title="Score Predicter"/>
     </group>
 
 

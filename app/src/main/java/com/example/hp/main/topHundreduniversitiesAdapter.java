@@ -40,9 +40,9 @@ public class topHundreduniversitiesAdapter extends ArrayAdapter<topHundred> {
         nameTextView.setText(currentUniversity.getUniversityName());
         nameTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
 
-//        TextView placeTextView = (TextView)listItemView.findViewById(R.id.place_text_view);
-//        placeTextView.setText(currentUniversity.getPlace());
-//        placeTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
+        TextView placeTextView = (TextView)listItemView.findViewById(R.id.place_text_view);
+        placeTextView.setText(currentUniversity.getPlace());
+        placeTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
 
         return listItemView;
     }
