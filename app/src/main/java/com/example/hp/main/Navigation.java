@@ -17,22 +17,36 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.FragmentManager;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.vstechlab.easyfonts.EasyFonts;
+
+import org.w3c.dom.Text;
 
 public class Navigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private TextView mAboutUs , mAboutUsBody;
 static int i=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, cardviewfragement.newInstance())
-                    .commit();
-        }
+//        if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(R.id.container, cardviewfragement.newInstance())
+//                    .commit();
+//        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
          Intent intent= getIntent();
+        mAboutUs = (TextView)findViewById(R.id.about_us);
+        mAboutUsBody = (TextView)findViewById(R.id.about_us_body);
+
+        mAboutUs.setText("About Us");
+        mAboutUs.setTypeface(EasyFonts.androidNationItalic(getApplicationContext()));
+
+        mAboutUsBody.setText("Placeholder Data.....\n...........\n..........\n");
+
 
         ImageView imageView=(ImageView) findViewById(R.id.imageView);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -62,6 +76,7 @@ static int i=1;
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -81,15 +96,21 @@ static int i=1;
         // Handle navigation view item clicks here.
         int id = item.getItemId();
          FragmentManager f= getSupportFragmentManager();
-        if(i==1)
-        {
-            getSupportFragmentManager()
-                    .beginTransaction().
-                    remove(getSupportFragmentManager().findFragmentById(R.id.container)).commit();
-        }
+//        if(i==1)
+//        {
+//            getSupportFragmentManager()
+//                    .beginTransaction().
+//                    remove(getSupportFragmentManager().findFragmentById(R.id.container)).commit();
+//        }
+//        i--;
+if(i==1)
+{
+    mAboutUs.setText("");
+    mAboutUsBody.setText("");
+}
         i--;
-
         if (id == R.id.nav_list_item) {
+
              f.beginTransaction().replace(R.id.content_frame, new topHundredFragment()).commit();
 
         } else if (id == R.id.nav_activity_search) {

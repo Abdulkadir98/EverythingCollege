@@ -29,6 +29,8 @@ public class topHundredFragment extends Fragment implements LoaderManager.Loader
 private ArrayList<topHundred> top25;
 private TextView emptyView;
     private ProgressBar mProgressBar;
+    private TextView mAboutUs, mAboutUsBody;
+    private ListView listView;
 
     public topHundredFragment() {
         // Required empty public constructor
@@ -69,25 +71,26 @@ private TextView emptyView;
 //        top100.add(new topHundred(23,"Delhi University","Delhi"));
 //        top100.add(new topHundred(24,"Manipal University","Manipal"));
 //        top100.add(new topHundred(25,"Amrita University","Coimbatore"));
+        mAboutUs = (TextView)rootView.findViewById(R.id.about_us);
+        mAboutUsBody = (TextView)rootView.findViewById(R.id.about_us_body);
 
-        top25 = new ArrayList<>();
         mAdapter = new topHundreduniversitiesAdapter(getActivity(),new ArrayList<topHundred>());
         mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
 
-        ListView listView = (ListView)rootView.findViewById(R.id.list);
+         listView = (ListView)rootView.findViewById(R.id.list);
         listView.setAdapter(mAdapter);
          emptyView = (TextView)rootView.findViewById(R.id.no_internet_connection);
         listView.setEmptyView(emptyView);
        //TODO Initialise the Loader here
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                topHundred topHundred = top25.get(i);
-//                Uri uri = topHundred.getUrl();
-//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-//                startActivity(intent);
-//            }
-//        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                topHundred topHundred = top25.get(i);
+                Uri uri = topHundred.getUrl();
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
         getLoaderManager().initLoader(0, null, this).forceLoad();
         setHasOptionsMenu(true);
         return rootView;
@@ -99,11 +102,20 @@ private TextView emptyView;
     }
 
     @Override
-    public void onLoadFinished(Loader<ArrayList<topHundred>> loader, ArrayList<topHundred> data) {
+    public void onLoadFinished(Loader<ArrayList<topHundred>> loader, final ArrayList<topHundred> data) {
         emptyView.setText("No Internet Connection");
 
         mAdapter.setColleges(data);
         mProgressBar.setVisibility(View.GONE);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                topHundred topHundred = data.get(i);
+                Uri uri = topHundred.getUrl();
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
 
     }
 
