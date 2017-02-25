@@ -79,15 +79,7 @@ private TextView emptyView;
          emptyView = (TextView)rootView.findViewById(R.id.no_internet_connection);
         listView.setEmptyView(emptyView);
        //TODO Initialise the Loader here
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                topHundred topHundred = top25.get(i);
-//                Uri uri = topHundred.getUrl();
-//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-//                startActivity(intent);
-//            }
-//        });
+
         getLoaderManager().initLoader(0, null, this).forceLoad();
         setHasOptionsMenu(true);
         return rootView;
@@ -104,6 +96,17 @@ private TextView emptyView;
 
         mAdapter.setColleges(data);
         mProgressBar.setVisibility(View.GONE);
+
+
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                topHundred topHundred = top25.get(i);
+//                Uri uri = topHundred.getUrl();
+//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
