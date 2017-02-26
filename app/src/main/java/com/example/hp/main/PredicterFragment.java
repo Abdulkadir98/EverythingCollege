@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import info.hoang8f.widget.FButton;
 
 
 /**
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 public class PredicterFragment extends Fragment {
     private ArrayList<Double> testScores;
     private EditText enterScore;
-    private Button displayScore, displayPrediction;
+    private FButton displayScore, displayPrediction;
     private static final String TAG = PredicterFragment.class.getSimpleName();
     private static final int CUT_OFF_JEE_MAIN = 100;
     private static final int CUT_OFF_BITS = 345;
@@ -47,8 +48,8 @@ public class PredicterFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_predicter, container, false);
         enterScore = (EditText)rootView.findViewById(R.id.enter_score);
-        displayScore = (Button)rootView.findViewById(R.id.add_score_button);
-        displayPrediction = (Button)rootView.findViewById(R.id.show_score_prediction);
+        displayScore = (FButton) rootView.findViewById(R.id.add_score_button);
+        displayPrediction = (FButton) rootView.findViewById(R.id.show_score_prediction);
         mListOfExams = (Spinner)rootView.findViewById(R.id.spinner);
 
         examList = new ArrayList<>();
@@ -157,16 +158,20 @@ public class PredicterFragment extends Fragment {
 
 
                 Double score = Double.parseDouble(enterScore.getText().toString().trim());
-                if (score!=null && testScores.size()<5) {
-                    testScores.add(score);
-                    Log.i(TAG,"Score: " + testScores);
-                    enterScore.setText("");
-                    Toast.makeText(getContext(), "Added score", Toast.LENGTH_SHORT).show();
+                if(score!=null) {
+                    if (testScores.size() < 5) {
+                        testScores.add(score);
+                        Log.i(TAG, "Score: " + testScores);
+                        enterScore.setText("");
+                        Toast.makeText(getContext(), "Added score", Toast.LENGTH_SHORT).show();
 
 
+                    } else {
+                        Toast.makeText(getContext(), "You can add only five scores", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else {
-                    Toast.makeText(getContext(), "You can add only five scores", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Please enter atleast one score", Toast.LENGTH_SHORT).show();
                 }
             }
         });

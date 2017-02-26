@@ -58,3 +58,6 @@ dependencies {
 dependencies {
     compile 'com.android.support:support-v4:24.+'
 }
+dependencies {
+    compile 'info.hoang8f:fbutton:1.0.5'
+}

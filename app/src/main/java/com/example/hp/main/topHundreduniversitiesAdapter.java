@@ -35,14 +35,17 @@ public class topHundreduniversitiesAdapter extends ArrayAdapter<topHundred> {
         TextView rankTextView = (TextView)listItemView.findViewById(R.id.rank_text_view);
         rankTextView.setText(currentUniversity.getRank()+"");
         rankTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
+        rankTextView.setTextSize(18);
 
         TextView nameTextView = (TextView)listItemView.findViewById(R.id.name_text_view);
         nameTextView.setText(currentUniversity.getUniversityName());
         nameTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
+        nameTextView.setTextSize(18);
 
         TextView placeTextView = (TextView)listItemView.findViewById(R.id.place_text_view);
         placeTextView.setText(currentUniversity.getPlace());
         placeTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
+        placeTextView.setTextSize(18);
 
         return listItemView;
     }
