@@ -27,20 +27,7 @@ public class scholarshipsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.list_view, container, false);
-        mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
-        mProgressBar.setVisibility(View.GONE);
 
-        final ArrayList<topHundred.Scholarship> scholarship = new ArrayList<topHundred.Scholarship>();
-        scholarship.add(new topHundred.Scholarship("Engineering","Valeo Innovation Challenge 2017"));
-        scholarship.add(new topHundred.Scholarship("Engineering", "IITM Summer fellowship"));
-        scholarship.add(new topHundred.Scholarship("Commerce", "Oxford MBA scholarship"));
-        scholarship.add(new topHundred.Scholarship("Engineering", "IET India scholarship 2017"));
-        scholarship.add(new topHundred.Scholarship("MEdicine", "JBNSTS"));
-
-
-        scholarshipsAdapter Adapter = new scholarshipsAdapter(getActivity(), scholarship);
-        ListView listView = (ListView)rootView.findViewById(R.id.list);
-        listView.setAdapter(Adapter);
         return rootView;
     }
 

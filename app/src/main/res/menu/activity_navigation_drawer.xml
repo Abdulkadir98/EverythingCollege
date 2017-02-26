@@ -19,12 +19,9 @@
 
             android:title="Entrance Exams" />
         <item
-            android:id="@+id/nav_list_item_scholarship"
+            android:id="@+id/nav_fragment_predicter"
 
-            android:title="Scholarship" />
-        <item
-            android:id="@+id/nav_activity_predicter"
-            android:title="Score Predicter"/>
+            android:title="Score Predicter" />
     </group>
 
 

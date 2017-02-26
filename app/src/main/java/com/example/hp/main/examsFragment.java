@@ -48,6 +48,10 @@ public class examsFragment extends Fragment {
         exams.add(new topHundred.Exams("SRMJEE", Uri.parse("http://www.srmuniv.ac.in/")));
         exams.add(new topHundred.Exams("VITEEE", Uri.parse("http://www.vit.ac.in/admissions/viteee/")));
         exams.add(new topHundred.Exams("JEE Mains", Uri.parse("http://jeemain.nic.in/")));
+        exams.add(new topHundred.Exams("BITSAT ", Uri.parse("http://bitsadmission.com/bitsatmain.aspx")));
+        exams.add(new topHundred.Exams("JEE Mains", Uri.parse("http://jeemain.nic.in/")));
+        exams.add(new topHundred.Exams("CET Bangalore", Uri.parse("http://kea.kar.nic.in/cet_2017.htm")));
+
 
         examsAdapter Adapter = new examsAdapter(getActivity(), exams);
         ListView listView = (ListView)rootView.findViewById(R.id.list);

@@ -32,7 +32,7 @@ public class examsAdapter extends ArrayAdapter<topHundred.Exams> {
         topHundred.Exams exam = getItem(position);
         TextView examTextView = (TextView)listItemView.findViewById(R.id.exam_text_view);
         examTextView.setText(exam.getExam());
-        examTextView.setTypeface(EasyFonts.caviarDreamsBold(getContext()));
+        examTextView.setTypeface(EasyFonts.androidNationBold(getContext()));
 
         return listItemView;
     }

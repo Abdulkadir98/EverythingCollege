@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class elgibilityAdapter extends AppCompatActivity {
     int cutoff1,k;
     @Override
@@ -27,15 +29,22 @@ public class elgibilityAdapter extends AppCompatActivity {
         mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(3,'Madras Institute of Technology',199,'Chennai');");
         mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(4,'Coimbatore Institute of Technology',198,'Coimbatore');");
         mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(5,'SSN College of Engineering',198,'Chennai');");
-        mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(5,'SSN College of Engineering',198,'Chennai');");
-        if(cutoff1<=200&&cutoff1>=198) {
+        mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(6,'Sri Venkateswara College of Engineering',198,'Chennai');");
+        mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(7,'Chennai Institute of Technology',197,'Chennai');");
+        mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(8,'St Josephs College of Engineering',196,'Chennai');");
+        mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(9,'Rajalakshmi Engineering College',195,'Chennai');");
+        mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(10,'Sri Sai Ram Engineering College',194,'Chennai');");
+        mydatabase.execSQL("INSERT INTO ANNAUNIV VALUES(11,'Easwari College Of Engineering',190,'Chennai');");
+
+
+        if(cutoff1<=200&&cutoff1>=190) {
             Cursor resultset = mydatabase.rawQuery("SELECT RANK,NAME,CITY FROM ANNAUNIV WHERE CUTOFFG<=" + cutoff1, null);
             resultset.moveToFirst();
             k = resultset.getInt(resultset.getColumnIndex("RANK"));
 
             final ArrayList<topHundred> eli = new ArrayList<topHundred>();
 
-            while (k <= 5) {
+            while (k <= 7) {
                 eli.add(new topHundred(resultset.getInt(resultset.getColumnIndex("RANK")), resultset.getString(resultset.getColumnIndex("NAME")), resultset.getString(resultset.getColumnIndex("CITY"))));
                 Log.v("Myactivity", resultset.getString(resultset.getColumnIndex("NAME")));
                 k++;
@@ -49,7 +58,7 @@ public class elgibilityAdapter extends AppCompatActivity {
         }
         else {
             Toast.makeText(getApplicationContext(),
-                    "Value Should be between 197 to 200", Toast.LENGTH_LONG).show();
+                    "Value Should be between 190 to 200", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(elgibilityAdapter.this,eligibilityActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
             startActivity(intent);
