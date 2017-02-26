@@ -39,8 +39,8 @@ static int i=1;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
          Intent intent= getIntent();
-        mAboutUs = (TextView)findViewById(R.id.about_us);
-        mAboutUsBody = (TextView)findViewById(R.id.about_us_body);
+//        mAboutUs = (TextView)findViewById(R.id.about_us);
+//        mAboutUsBody = (TextView)findViewById(R.id.about_us_body);
 
         mAboutUs.setText("About Us");
         mAboutUs.setTypeface(EasyFonts.androidNationItalic(getApplicationContext()));

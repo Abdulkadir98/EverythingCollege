@@ -40,8 +40,8 @@ public class examsFragment extends Fragment {
 
         mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
         mProgressBar.setVisibility(View.GONE);
-        mAboutUs = (TextView)rootView.findViewById(R.id.about_us);
-        mAboutUsBody = (TextView)rootView.findViewById(R.id.about_us_body);
+//        mAboutUs = (TextView)rootView.findViewById(R.id.about_us);
+//        mAboutUsBody = (TextView)rootView.findViewById(R.id.about_us_body);
 
 
         final ArrayList<topHundred.Exams> exams = new ArrayList<>();

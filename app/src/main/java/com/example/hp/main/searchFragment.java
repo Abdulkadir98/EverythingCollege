@@ -45,8 +45,8 @@ private TextView mAboutUs, mAboutUsBody;
         citylist.add("Chennai");
         citylist.add("New Delhi");
         b= (Button) rootView.findViewById(R.id.button2);
-        mAboutUs = (TextView)rootView.findViewById(R.id.about_us);
-        mAboutUsBody = (TextView)rootView.findViewById(R.id.about_us_body);
+//        mAboutUs = (TextView)rootView.findViewById(R.id.about_us);
+//        mAboutUsBody = (TextView)rootView.findViewById(R.id.about_us_body);
 
 
 
