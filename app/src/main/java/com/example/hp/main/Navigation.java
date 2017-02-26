@@ -14,10 +14,6 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.vstechlab.easyfonts.EasyFonts;
-
-import org.w3c.dom.Text;
-
 public class Navigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TextView mAboutUs , mAboutUsBody;
@@ -37,10 +33,10 @@ static int i=1;
 //        mAboutUs = (TextView)findViewById(R.id.about_us);
 //        mAboutUsBody = (TextView)findViewById(R.id.about_us_body);
 
-        mAboutUs.setText("About Us");
-        mAboutUs.setTypeface(EasyFonts.androidNationItalic(getApplicationContext()));
-
-        mAboutUsBody.setText("Placeholder Data.....\n...........\n..........\n");
+//        mAboutUs.setText("About Us");
+//        mAboutUs.setTypeface(EasyFonts.androidNationItalic(getApplicationContext()));
+//
+//        mAboutUsBody.setText("Placeholder Data.....\n...........\n..........\n");
 
 
         ImageView imageView=(ImageView) findViewById(R.id.imageView);
@@ -98,12 +94,12 @@ static int i=1;
 //                    remove(getSupportFragmentManager().findFragmentById(R.id.container)).commit();
 //        }
 //        i--;
-if(i==1)
-{
-    mAboutUs.setText("");
-    mAboutUsBody.setText("");
-}
-        i--;
+//if(i==1)
+//{
+//    mAboutUs.setText("");
+//    mAboutUsBody.setText("");
+//}
+//        i--;
         if (id == R.id.nav_list_item) {
 
              f.beginTransaction().replace(R.id.content_frame, new topHundredFragment()).commit();

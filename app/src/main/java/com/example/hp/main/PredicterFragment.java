@@ -108,14 +108,20 @@ public class PredicterFragment extends Fragment {
                         break;
                     case 1:
                         testScores.clear();
+                        enterScore.setText("");
+
                         predictScore(CUT_OFF_JEE_ADVANCED);
                         break;
                     case 2:
                         testScores.clear();
+                        enterScore.setText("");
+
                         predictScore(CUT_OFF_BITS);
                         break;
                     case 3:
                         testScores.clear();
+                        enterScore.setText("");
+
                         predictScore(CUT_OFF_VIT);
                         break;
                     default:
