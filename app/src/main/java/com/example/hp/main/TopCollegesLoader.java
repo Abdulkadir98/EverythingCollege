@@ -54,7 +54,11 @@ public class TopCollegesLoader extends android.support.v4.content.AsyncTaskLoade
                 String url = jsonObject.getString("url");
                 String state = jsonObject.getString("state");
 
+<<<<<<< HEAD
                 colleges.add(new topHundred(rank, college, state, Uri.parse(url)));
+=======
+                colleges.add(new topHundred(rank, college, Uri.parse("http://" + url)));
+>>>>>>> origin/master
             }return colleges;
         } catch (JSONException e) {
             e.printStackTrace();

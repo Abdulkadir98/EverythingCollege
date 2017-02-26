@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class searchFragment extends Fragment {
     int position;
     Button b;
     Uri uri;
-
+private TextView mAboutUs, mAboutUsBody;
 
     public searchFragment() {
         // Required empty public constructor
@@ -44,6 +45,9 @@ public class searchFragment extends Fragment {
         citylist.add("Chennai");
         citylist.add("New Delhi");
         b= (Button) rootView.findViewById(R.id.button2);
+//        mAboutUs = (TextView)rootView.findViewById(R.id.about_us);
+//        mAboutUsBody = (TextView)rootView.findViewById(R.id.about_us_body);
+
 
 
 
