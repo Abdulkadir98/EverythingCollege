@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class examsFragment extends Fragment {
     String srmUrl , vitUrl, iitUrl;
     private ProgressBar mProgressBar;
+    private TextView mAboutUs, mAboutUsBody;
 
 
     public examsFragment() {
@@ -38,6 +40,9 @@ public class examsFragment extends Fragment {
 
         mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
         mProgressBar.setVisibility(View.GONE);
+        mAboutUs = (TextView)rootView.findViewById(R.id.about_us);
+        mAboutUsBody = (TextView)rootView.findViewById(R.id.about_us_body);
+
 
         final ArrayList<topHundred.Exams> exams = new ArrayList<>();
         exams.add(new topHundred.Exams("SRMJEE", Uri.parse("http://www.srmuniv.ac.in/")));
