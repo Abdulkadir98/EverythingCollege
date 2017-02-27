@@ -9,13 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-
-import info.hoang8f.widget.FButton;
 
 
 /**
@@ -24,7 +23,7 @@ import info.hoang8f.widget.FButton;
 public class PredicterFragment extends Fragment {
     private ArrayList<Double> testScores;
     private EditText enterScore;
-    private FButton displayScore, displayPrediction;
+    private Button displayScore, displayPrediction;
     private static final String TAG = PredicterFragment.class.getSimpleName();
     private static final int CUT_OFF_JEE_MAIN = 100;
     private static final int CUT_OFF_BITS = 345;
@@ -48,8 +47,8 @@ public class PredicterFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_predicter, container, false);
         enterScore = (EditText)rootView.findViewById(R.id.enter_score);
-        displayScore = (FButton) rootView.findViewById(R.id.add_score_button);
-        displayPrediction = (FButton) rootView.findViewById(R.id.show_score_prediction);
+        displayScore = (Button)rootView.findViewById(R.id.add_score_button);
+        displayPrediction = (Button)rootView.findViewById(R.id.show_score_prediction);
         mListOfExams = (Spinner)rootView.findViewById(R.id.spinner);
 
         examList = new ArrayList<>();
@@ -110,19 +109,16 @@ public class PredicterFragment extends Fragment {
                     case 1:
                         testScores.clear();
                         enterScore.setText("");
-
                         predictScore(CUT_OFF_JEE_ADVANCED);
                         break;
                     case 2:
                         testScores.clear();
                         enterScore.setText("");
-
                         predictScore(CUT_OFF_BITS);
                         break;
                     case 3:
                         testScores.clear();
                         enterScore.setText("");
-
                         predictScore(CUT_OFF_VIT);
                         break;
                     default:
@@ -156,10 +152,15 @@ public class PredicterFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
+                String sc = enterScore.getText().toString().trim();
+                if(sc==null){
+                    Toast.makeText(getContext(), "You have to enter a score!", Toast.LENGTH_SHORT).show();
 
-                Double score = Double.parseDouble(enterScore.getText().toString().trim());
-                if(score!=null) {
-                    if (testScores.size() < 5) {
+                }
+                else {
+
+                    Double score = Double.parseDouble(sc);
+                    if (score != null) {
                         testScores.add(score);
                         Log.i(TAG, "Score: " + testScores);
                         enterScore.setText("");
@@ -170,28 +171,35 @@ public class PredicterFragment extends Fragment {
                         Toast.makeText(getContext(), "You can add only five scores", Toast.LENGTH_SHORT).show();
                     }
                 }
-                else {
-                    Toast.makeText(getContext(), "Please enter atleast one score", Toast.LENGTH_SHORT).show();
-                }
             }
         });
         displayPrediction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(testScores!=null) {
-                    double predictedScore = Utility.predictionValue(testScores);
-                    enterScore.setText(predictedScore + "");
-                    if(predictedScore>=cutOff){
-                        Toast.makeText(getContext(), "Congrats! You have a great chance of entering", Toast.LENGTH_LONG).show();
+                if(testScores!=null ) {
+                    if(testScores.size() == 1) {
+                        Toast.makeText(getContext(),"You have to enter atleast 2 Scores",Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Toast.makeText(getContext(),"Sorry! You must try harder", Toast.LENGTH_SHORT).show();
+
+
+                        double predictedScore = Utility.predictionValue(testScores);
+                        enterScore.setText(predictedScore + "");
+                        if (predictedScore >= cutOff) {
+                            Toast.makeText(getContext(), "Congrats! You have a great chance of entering", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(getContext(), "Sorry! You must try harder", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                }
+
+                    }
+
                 else
                 {
                     Toast.makeText(getContext(), "Sorry! you haven't entered your scores",
                             Toast.LENGTH_SHORT).show();
+                    throw new NumberFormatException("You've to enter a score");
+
                 }
 
             }

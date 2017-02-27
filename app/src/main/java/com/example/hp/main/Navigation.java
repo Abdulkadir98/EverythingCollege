@@ -116,6 +116,9 @@ static int i=1;
             f.beginTransaction().replace(R.id.content_frame, new examsFragment()).commit();
 
         }
+        else if (id== R.id.nav_list_item_scholarship){
+            f.beginTransaction().replace(R.id.content_frame, new scholarshipsFragment()).commit();
+        }
         else if (id== R.id.nav_fragment_predicter){
             f.beginTransaction().replace(R.id.content_frame, new PredicterFragment()).commit();
         }
