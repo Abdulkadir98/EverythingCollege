@@ -14,10 +14,13 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static android.R.attr.id;
+
 public class Navigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TextView mAboutUs , mAboutUsBody;
 static int i=1;
+    NavigationView n;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,10 @@ static int i=1;
 //                    .add(R.id.container, cardviewfragement.newInstance())
 //                    .commit();
 //        }
+        n= (NavigationView)findViewById(R.id.nav_view);
+
+        onNavigationItemSelected(n.getMenu().findItem(R.id.nav_list_item));
+        onNavigationItemSelected(n.getMenu().getItem(0));
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
          Intent intent= getIntent();
@@ -85,7 +92,9 @@ static int i=1;
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        int id;
+
+        id=item.getItemId();
          FragmentManager f= getSupportFragmentManager();
 //        if(i==1)
 //        {
@@ -100,6 +109,7 @@ static int i=1;
 //    mAboutUsBody.setText("");
 //}
 //        i--;
+        f.beginTransaction().replace(R.id.content_frame, new topHundredFragment()).commit();
         if (id == R.id.nav_list_item) {
 
              f.beginTransaction().replace(R.id.content_frame, new topHundredFragment()).commit();
@@ -116,7 +126,7 @@ static int i=1;
             f.beginTransaction().replace(R.id.content_frame, new examsFragment()).commit();
 
         }
-        else if (id== R.id.nav_list_item_scholarship){
+        else if (id== R.id.nav_list_item_s){
             f.beginTransaction().replace(R.id.content_frame, new scholarshipsFragment()).commit();
         }
         else if (id== R.id.nav_fragment_predicter){

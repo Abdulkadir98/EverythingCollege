@@ -19,7 +19,7 @@
 
             android:title="Entrance Exams" />
         <item
-            android:id="@+id/nav_list_item_scholarship"
+            android:id="@+id/nav_list_item_s"
 
             android:title="Scholarship" />
         <item
