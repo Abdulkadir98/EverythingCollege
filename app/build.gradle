@@ -61,3 +61,6 @@ dependencies {
 dependencies {
     compile 'info.hoang8f:fbutton:1.0.5'
 }
+dependencies {
+    compile 'com.wang.avi:library:2.1.3'
+}

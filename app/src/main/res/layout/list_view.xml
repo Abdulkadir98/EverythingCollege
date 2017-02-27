@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <ListView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,9 +20,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/no_internet_connection"
         android:layout_centerInParent="true" />
-    <ProgressBar
+    <com.wang.avi.AVLoadingIndicatorView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:id="@+id/loader_indicator"/>
+        android:id="@+id/loader_indicator"
+        app:indicatorName="BallPulseIndicator"
+        app:indicatorColor="@color/fbutton_color_midnight_blue"
+        />
     </RelativeLayout>

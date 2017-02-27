@@ -10,8 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ import java.util.ArrayList;
  */
 public class examsFragment extends Fragment {
     String srmUrl , vitUrl, iitUrl;
-    private ProgressBar mProgressBar;
+    private AVLoadingIndicatorView mProgressBar;
     private TextView mAboutUs, mAboutUsBody;
 
 
@@ -38,10 +39,11 @@ public class examsFragment extends Fragment {
         srmUrl = "www.srmuniv.ac.in/";
         iitUrl = "jeemain.nic.in/";
 
-        mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
-        mProgressBar.setVisibility(View.GONE);
+        mProgressBar = (AVLoadingIndicatorView) rootView.findViewById(R.id.loader_indicator);
+//        mProgressBar.setVisibility(View.GONE);
 //        mAboutUs = (TextView)rootView.findViewById(R.id.about_us);
 //        mAboutUsBody = (TextView)rootView.findViewById(R.id.about_us_body);
+        stopAnim();
 
 
         final ArrayList<topHundred.Exams> exams = new ArrayList<>();
@@ -49,7 +51,7 @@ public class examsFragment extends Fragment {
         exams.add(new topHundred.Exams("VITEEE", Uri.parse("http://www.vit.ac.in/admissions/viteee/")));
         exams.add(new topHundred.Exams("JEE Mains", Uri.parse("http://jeemain.nic.in/")));
         exams.add(new topHundred.Exams("BITSAT ", Uri.parse("http://bitsadmission.com/bitsatmain.aspx")));
-        exams.add(new topHundred.Exams("JEE Mains", Uri.parse("http://jeemain.nic.in/")));
+        exams.add(new topHundred.Exams("JEE Advanced", Uri.parse("http://jeemain.nic.in/")));
         exams.add(new topHundred.Exams("CET Bangalore", Uri.parse("http://kea.kar.nic.in/cet_2017.htm")));
 
 
@@ -69,6 +71,10 @@ public class examsFragment extends Fragment {
             }
         });
         return rootView;
+    }
+    void stopAnim(){
+        mProgressBar.hide();
+        // or avi.smoothToHide();
     }
 
 }

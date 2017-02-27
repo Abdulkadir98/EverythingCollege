@@ -16,8 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 
@@ -28,7 +29,7 @@ public class topHundredFragment extends Fragment implements LoaderManager.Loader
     private topHundreduniversitiesAdapter mAdapter;
 private ArrayList<topHundred> top25;
 private TextView emptyView;
-    private ProgressBar mProgressBar;
+    private AVLoadingIndicatorView mProgressBar;
     ListView listView;
 
     public topHundredFragment() {
@@ -73,7 +74,8 @@ private TextView emptyView;
 
         top25 = new ArrayList<>();
         mAdapter = new topHundreduniversitiesAdapter(getActivity(),new ArrayList<topHundred>());
-        mProgressBar = (ProgressBar)rootView.findViewById(R.id.loader_indicator);
+        mProgressBar = (AVLoadingIndicatorView) rootView.findViewById(R.id.loader_indicator);
+        startAnim();
 
          listView = (ListView)rootView.findViewById(R.id.list);
         listView.setAdapter(mAdapter);
@@ -96,8 +98,7 @@ private TextView emptyView;
         emptyView.setText("No Internet Connection");
 
         mAdapter.setColleges(data);
-        mProgressBar.setVisibility(View.GONE);
-
+        stopAnim();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -129,5 +130,14 @@ private TextView emptyView;
             getLoaderManager().restartLoader(0, null, this).forceLoad();
 
         }return true;
+    }
+    void startAnim(){
+        mProgressBar.show();
+        // or avi.smoothToShow();
+    }
+
+    void stopAnim(){
+        mProgressBar.hide();
+        // or avi.smoothToHide();
     }
 }
