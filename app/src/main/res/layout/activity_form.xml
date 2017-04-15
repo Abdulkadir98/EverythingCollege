@@ -99,6 +99,7 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:gravity="top"
+            android:id="@+id/user_address"
             android:layout_marginLeft="10dp"
         android:hint="Address"
         android:fitsSystemWindows="true"

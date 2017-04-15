@@ -1,5 +1,6 @@
 package com.example.hp.main.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -7,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -17,8 +19,6 @@ import android.widget.TextView;
 import com.example.hp.main.R;
 import com.example.hp.main.fragments.PredicterFragment;
 import com.example.hp.main.fragments.eligibilityFragment;
-import com.example.hp.main.fragments.examsFragment;
-import com.example.hp.main.fragments.scholarshipsFragment;
 import com.example.hp.main.fragments.searchFragment;
 import com.example.hp.main.fragments.topHundredFragment;
 
@@ -57,7 +57,7 @@ static int i=1;
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-        setTitle("EverythingCollege");
+        setTitle("College Mate");
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -69,7 +69,7 @@ static int i=1;
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            exitDialog();
         }
     }
 
@@ -126,15 +126,16 @@ static int i=1;
 
         } else if (id == R.id.nav_activity_eligibility) {
             f.beginTransaction().replace(R.id.content_frame, new eligibilityFragment()).commit();
+        }
 
 
-        } else if (id == R.id.nav_activity_entrance) {
-            f.beginTransaction().replace(R.id.content_frame, new examsFragment()).commit();
-//
-        }
-        else if (id== R.id.nav_list_item_s){
-            f.beginTransaction().replace(R.id.content_frame, new scholarshipsFragment()).commit();
-        }
+//        } else if (id == R.id.nav_activity_entrance) {
+//            f.beginTransaction().replace(R.id.content_frame, new examsFragment()).commit();
+////
+//        }
+//        else if (id== R.id.nav_list_item_s){
+//            f.beginTransaction().replace(R.id.content_frame, new scholarshipsFragment()).commit();
+//        }
         else if (id== R.id.nav_fragment_predicter){
             f.beginTransaction().replace(R.id.content_frame, new PredicterFragment()).commit();
         }
@@ -148,4 +149,25 @@ static int i=1;
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    private void exitDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Exit the App");
+        builder.setPositiveButton("Stay", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(dialog!=null){
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                System.exit(0);
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
 }

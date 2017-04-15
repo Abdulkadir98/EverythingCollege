@@ -15,15 +15,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 
 public class elgibilityAdapter extends AppCompatActivity {
     int cutoff1,k;
+    AVLoadingIndicatorView progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view);
+        progressBar = (AVLoadingIndicatorView)findViewById(R.id.loader_indicator);
+        progressBar.hide();
 
 
         cutoff1=getIntent().getIntExtra("Number", 0);

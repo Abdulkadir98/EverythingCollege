@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.hp.main.ui.Form;
 import com.example.hp.main.ui.Navigation;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
@@ -50,14 +51,14 @@ public class Login extends AppCompatActivity {
 
             // Successfully signed in
             if (resultCode == RESULT_OK) {
-                startActivity(new Intent(getApplicationContext(), Navigation.class));
+                startActivity(new Intent(getApplicationContext(), Form.class));
                 finish();
                 return;
             } else {
                 // Sign in failed
                 if (response == null) {
                     Snackbar.make(findViewById(android.R.id.content), "Sign in Cancelled", Snackbar.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), Navigation.class));
+                    startActivity(new Intent(getApplicationContext(), Form.class));
                     finish();
                     return;
                 }
@@ -68,7 +69,7 @@ public class Login extends AppCompatActivity {
                             .setAction("RETRY", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    startActivity(new Intent(getApplicationContext(), Navigation.class));
+                                    startActivity(new Intent(getApplicationContext(), Form.class));
                                     finish();
                                 }
                             });

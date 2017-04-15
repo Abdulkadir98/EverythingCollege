@@ -12,6 +12,7 @@ import android.widget.EditText;
 
 import com.example.hp.main.R;
 import com.example.hp.main.adapters.elgibilityAdapter;
+import com.wang.avi.AVLoadingIndicatorView;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.hp.main.fragments.eligibilityFragment;
-import com.example.hp.main.fragments.scholarshipsFragment;
 import com.example.hp.main.fragments.searchFragment;
 import com.example.hp.main.fragments.topHundredFragment;
 
@@ -24,7 +23,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
             case 0: return new topHundredFragment();
             case 1: return new searchFragment();
             case 2: return new eligibilityFragment();
-            case 3: return new scholarshipsFragment();
+//            case 3: return new scholarshipsFragment();
             default: throw new IllegalArgumentException("Cannot find Fragment");
         //
         }

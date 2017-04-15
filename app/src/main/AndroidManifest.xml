@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hp.main">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <!--  -->
     <application
@@ -32,18 +34,10 @@
             android:label="Search A College"
             android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".ui.examsActivity"
-            android:label="Entrance Exams"
-            android:parentActivityName=".ui.MainActivity" />
-        <activity
             android:name=".ui.eligibilityActivity"
             android:label="Eligiblity"
             android:parentActivityName=".ui.MainActivity" />
         <activity android:name=".adapters.elgibilityAdapter" />
-        <activity
-            android:name=".ui.scholarshipActivity"
-            android:label="Scholarships"
-            android:parentActivityName=".ui.MainActivity" />
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.stateActivity" />
         <activity android:name=".states_intro" />
