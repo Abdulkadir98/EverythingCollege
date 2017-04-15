@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity  {
     private static final String COLLEGE_WEBSITE_URL = "https://data.gov.in/api/datastore/resource.json?resource_id=44bea382-c525-4740-8a07-04bd20a99b52";
     private static final String EARTHQUAKE_URL  = "http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-12-01&minmagnitude=8";
     private static final String TAG = MainActivity.class.getSimpleName();
-
+//
 
     public static final String API_URL_STRING = "https://cskcecback.herokuapp.com";
     public static final String API_NAME="name";

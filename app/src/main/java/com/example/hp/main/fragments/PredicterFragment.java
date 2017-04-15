@@ -36,7 +36,7 @@ public class PredicterFragment extends Fragment {
     ArrayList<String> examList;
 
 
-
+//
 
 
     public PredicterFragment() {

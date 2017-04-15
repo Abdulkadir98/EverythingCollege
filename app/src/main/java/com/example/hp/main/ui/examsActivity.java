@@ -16,7 +16,7 @@ public class examsActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new examsFragment())
                 .commit();
-
+//
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

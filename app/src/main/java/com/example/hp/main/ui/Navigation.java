@@ -130,7 +130,7 @@ static int i=1;
 
         } else if (id == R.id.nav_activity_entrance) {
             f.beginTransaction().replace(R.id.content_frame, new examsFragment()).commit();
-
+//
         }
         else if (id== R.id.nav_list_item_s){
             f.beginTransaction().replace(R.id.content_frame, new scholarshipsFragment()).commit();
@@ -138,6 +138,7 @@ static int i=1;
         else if (id== R.id.nav_fragment_predicter){
             f.beginTransaction().replace(R.id.content_frame, new PredicterFragment()).commit();
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

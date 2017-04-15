@@ -1,27 +1,28 @@
 package com.example.hp.main.fragments;
 
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+
 import com.example.hp.main.R;
-import com.example.hp.main.TopCollegesLoader;
 import com.example.hp.main.adapters.topHundreduniversitiesAdapter;
+import com.example.hp.main.models.College;
 import com.example.hp.main.models.topHundred;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class topHundredFragment extends Fragment implements LoaderManager.LoaderCallbacks<ArrayList<topHundred>>{
+public class topHundredFragment extends Fragment{
     private topHundreduniversitiesAdapter mAdapter;
 private ArrayList<topHundred> top25;
 private TextView emptyView;
@@ -45,7 +46,7 @@ private TextView emptyView;
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
-
+//
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -75,9 +76,10 @@ private TextView emptyView;
 //        top100.add(new topHundred(23,"Delhi University","Delhi"));
 //        top100.add(new topHundred(24,"Manipal University","Manipal"));
 //        top100.add(new topHundred(25,"Amrita University","Coimbatore"));
+        DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
 
         top25 = new ArrayList<>();
-        mAdapter = new topHundreduniversitiesAdapter(getActivity(),new ArrayList<topHundred>());
+        mAdapter = new topHundreduniversitiesAdapter(getActivity(),new ArrayList<College>());
         mProgressBar = (AVLoadingIndicatorView) rootView.findViewById(R.id.loader_indicator);
         startAnim();
 
@@ -85,41 +87,74 @@ private TextView emptyView;
         listView.setAdapter(mAdapter);
          emptyView = (TextView)rootView.findViewById(R.id.no_internet_connection);
         listView.setEmptyView(emptyView);
-       //TODO Initialise the Loader here
-
-        getLoaderManager().initLoader(0, null, this).forceLoad();
-        setHasOptionsMenu(true);
-        return rootView;
-    }
-
-    @Override
-    public Loader<ArrayList<topHundred>> onCreateLoader(int id, Bundle args) {
-        return new TopCollegesLoader(getActivity().getApplicationContext());
-    }
-
-    @Override
-    public void onLoadFinished(Loader<ArrayList<topHundred>> loader, final ArrayList<topHundred> data) {
-        emptyView.setText("No Internet Connection");
-
-        mAdapter.setColleges(data);
-        stopAnim();
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ref.child("Colleges").addChildEventListener(new ChildEventListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                topHundred topHundred = data.get(i);
-                Uri uri = topHundred.getUrl();
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                College c = dataSnapshot.getValue(College.class);
+                mAdapter.add(c);
+                listView.setAdapter(mAdapter);
+                mAdapter.notifyDataSetChanged();
+                stopAnim();
+
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
+       //TODO Initialise the Loader here
+
+//        getLoaderManager().initLoader(0, null, this).forceLoad();
+        setHasOptionsMenu(true);
+        return rootView;
 
     }
 
-    @Override
-    public void onLoaderReset(Loader<ArrayList<topHundred>> loader) {
-     mAdapter.setColleges(new ArrayList<topHundred>());
-    }
+//    @Override
+//    public Loader<ArrayList<topHundred>> onCreateLoader(int id, Bundle args) {
+//        return new TopCollegesLoader(getActivity().getApplicationContext());
+//    }
+//
+//    @Override
+//    public void onLoadFinished(Loader<ArrayList<topHundred>> loader, final ArrayList<topHundred> data) {
+//        emptyView.setText("No Internet Connection");
+//
+//        mAdapter.setColleges(data);
+//        stopAnim();
+//
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                topHundred topHundred = data.get(i);
+//                Uri uri = topHundred.getUrl();
+//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//                startActivity(intent);
+//            }
+//        });
+//
+//    }
+//
+//    @Override
+//    public void onLoaderReset(Loader<ArrayList<topHundred>> loader) {
+//     mAdapter.setColleges(new ArrayList<topHundred>());
+//    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -131,7 +166,7 @@ private TextView emptyView;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()== R.menu.everythingcollege_menu){
-            getLoaderManager().restartLoader(0, null, this).forceLoad();
+//            getLoaderManager().restartLoader(0, null, this).forceLoad();
 
         }return true;
     }

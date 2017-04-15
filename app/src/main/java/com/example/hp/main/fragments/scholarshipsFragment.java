@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class scholarshipsFragment extends Fragment {
     private AVLoadingIndicatorView mProgressBar;
 
-
+//
     public scholarshipsFragment() {
         // Required empty public constructor
     }

@@ -22,7 +22,7 @@ public class scholarshipsAdapter extends ArrayAdapter<topHundred.Scholarship> {
     public scholarshipsAdapter(Activity context, ArrayList<topHundred.Scholarship> scholarships){
         super(context, 0, scholarships);
     }
-
+//
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

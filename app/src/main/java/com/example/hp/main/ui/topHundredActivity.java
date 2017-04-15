@@ -22,7 +22,7 @@ public class topHundredActivity extends AppCompatActivity  {
                 .commit();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
+//
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.everythingcollege_menu, menu);

@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="74dp"
         android:id="@+id/spinnercity" />
-
+<!---->
     <TextView
         android:text="Colleges:"
         android:layout_width="wrap_content"

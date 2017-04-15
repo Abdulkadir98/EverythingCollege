@@ -12,8 +12,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.hp.main.ui.topHundredActivity">
-
+    tools:context="com.example.hp.main.topHundredActivity">
+<!---->
 </ListView>
     <TextView
         android:layout_width="wrap_content"

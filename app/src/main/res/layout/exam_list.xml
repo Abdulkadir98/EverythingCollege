@@ -17,5 +17,5 @@ tools:context="com.example.hp.main.ui.examsActivity">
     android:hint="exams"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
-
+<!---->
 </LinearLayout>

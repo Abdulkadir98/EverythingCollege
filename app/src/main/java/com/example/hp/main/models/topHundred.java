@@ -12,7 +12,7 @@ public class topHundred {
     public Uri mUrl;
     public topHundred()
     {
-
+//
     }
     public topHundred(int rank, String name){
         mRank = rank;

@@ -8,6 +8,7 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     >
+    <!---->
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/container"

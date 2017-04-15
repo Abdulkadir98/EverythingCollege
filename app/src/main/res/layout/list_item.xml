@@ -13,6 +13,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:id="@+id/rank_text_view"
         />
+    <!---->
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"

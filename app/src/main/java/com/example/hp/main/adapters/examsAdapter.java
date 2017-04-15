@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class examsAdapter extends ArrayAdapter<topHundred.Exams> {
     public examsAdapter(Activity context, ArrayList<topHundred.Exams> examsArrayAdapter){
         super(context,0, examsArrayAdapter);
-
+//
     }
 
     @NonNull

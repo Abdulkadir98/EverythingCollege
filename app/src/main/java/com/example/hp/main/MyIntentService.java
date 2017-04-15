@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class MyIntentService extends IntentService {
     public static final String TAG = MyIntentService.class.getSimpleName();
-
+//
     public MyIntentService(){
         super("MyIntentService");
     }

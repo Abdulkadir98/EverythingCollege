@@ -17,6 +17,6 @@ public class eligibilityActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new eligibilityFragment())
                 .commit();
-
+//
     }
 }

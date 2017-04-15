@@ -17,7 +17,7 @@ public class searchActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new searchFragment())
                 .commit();
-
+//
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

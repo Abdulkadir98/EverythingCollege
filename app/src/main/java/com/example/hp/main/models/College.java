@@ -1,27 +1,25 @@
-package com.example.sudarshan.collegeenter;
-
-import static com.example.sudarshan.collegeenter.R.id.rank;
+package com.example.hp.main.models;
 
 /**
  * Created by Sudarshan on 15-04-2017.
  */
 
 public class College {
-    //int rank
+    int rank;
     String name,city,state,url,entrance;
     double cutoff;
-    public  College ()
+    public College()
     {
 
     }
 
-//    public int getRank() {
-//        return rank;
-//    }
-//
-//    public void setRank(int rank) {
-//        this.rank = rank;
-//    }
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
 
     public String getName() {
         return name;

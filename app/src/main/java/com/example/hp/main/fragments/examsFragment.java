@@ -26,7 +26,7 @@ public class examsFragment extends Fragment {
     String srmUrl , vitUrl, iitUrl;
     private AVLoadingIndicatorView mProgressBar;
     private TextView mAboutUs, mAboutUsBody;
-
+//
 
     public examsFragment() {
         // Required empty public constructor

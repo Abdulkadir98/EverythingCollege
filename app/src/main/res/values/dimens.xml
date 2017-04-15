@@ -15,4 +15,5 @@
     <dimen name="seekbar_label_length">70dp</dimen>
     <dimen name="horizontal_page_margin">@dimen/margin_medium</dimen>
     <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
+    <!---->
 </resources>

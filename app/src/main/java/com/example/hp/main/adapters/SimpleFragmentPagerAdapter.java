@@ -26,6 +26,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
             case 2: return new eligibilityFragment();
             case 3: return new scholarshipsFragment();
             default: throw new IllegalArgumentException("Cannot find Fragment");
+        //
         }
     }
 

@@ -19,7 +19,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.hp.main",
-            "certificate_hash": "9617294467581C253D5BBE720D757B1FCFC1DB4A"
+            "certificate_hash": "9617294467581c253d5bbe720d757b1fcfc1db4a"
           }
         },
         {
@@ -44,6 +44,81 @@
               "client_type": 3
             }
           ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542445521102:android:f38f72eaa3229bc1",
+        "android_client_info": {
+          "package_name": "com.example.sudarshan.collegeenter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542445521102-mc2e92las209gr3mr2mms51s0rln5fn8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sudarshan.collegeenter",
+            "certificate_hash": "9617294467581c253d5bbe720d757b1fcfc1db4a"
+          }
+        },
+        {
+          "client_id": "542445521102-pqgd8thic06r3gi495eeu7nohj6vt0p4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy836-l3qYBDlYLetb13Ugug0OmrWD8Xw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542445521102-pqgd8thic06r3gi495eeu7nohj6vt0p4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542445521102:android:580fcf30efe68216",
+        "android_client_info": {
+          "package_name": "com.example.sudarshan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542445521102-pqgd8thic06r3gi495eeu7nohj6vt0p4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy836-l3qYBDlYLetb13Ugug0OmrWD8Xw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

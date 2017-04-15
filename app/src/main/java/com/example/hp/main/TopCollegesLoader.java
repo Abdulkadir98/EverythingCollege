@@ -21,7 +21,7 @@ import java.util.List;
 public class TopCollegesLoader extends android.support.v4.content.AsyncTaskLoader {
     ArrayList<topHundred> colleges = new ArrayList<>();
     private static final String TAG = TopCollegesLoader.class.getSimpleName();
-
+//
     public TopCollegesLoader(Context context){
         super(context);
     }

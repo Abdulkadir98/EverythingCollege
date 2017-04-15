@@ -79,7 +79,7 @@ import static java.net.Proxy.Type.HTTP;
  * further requests.
  */
 public class HttpRequest {
-
+//
     /**
      * 'UTF-8' charset name
      */

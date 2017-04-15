@@ -15,6 +15,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.hp.main.R;
+import com.example.hp.main.models.College;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +36,7 @@ public class searchFragment extends Fragment {
     Button b;
     Uri uri;
 private TextView mAboutUs, mAboutUsBody;
-
+//
     public searchFragment() {
         // Required empty public constructor
     }
@@ -66,91 +72,49 @@ private TextView mAboutUs, mAboutUsBody;
         {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
                 parent.getItemAtPosition(pos);
-                if(pos==0||pos==-1)
-                {
-                    colllist.clear();
-                    colllist.add("SRM University");
-                    colllist.add("IIT Madras");
-                    colllist.add("VIT Chennai");
-                    colllist.add("Anna University");
-                    colllist.add("SSN College Of Engineering");
-                    colllist.add("MII Chennai");
-                    colllist.add("Hindustan University");
-                    colllist.add("Sathyabama University");
-                    colllist.add("Sri Venkateshwara College Of Engineering");
+                DatabaseReference ref= FirebaseDatabase.getInstance().getReference();
+                ref.child("Colleges").addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                        College c= dataSnapshot.getValue(College.class);
+                        String cityn= city.getSelectedItem().toString();
+                        if(cityn.equals(c.getCity()))
+                        {
+                              colllist.clear();
+                            colllist.add(c.getName()+"");
+                            ArrayAdapter<String> collAdapter = new ArrayAdapter<String>(getActivity(),R.layout.spin_item, colllist);
+                            collAdapter.notifyDataSetChanged();
+                            collAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+                            college.setAdapter(collAdapter);
+                        }
+                        else
+                        {
+                            colllist.clear();
+                        }
+                    }
 
-                    ArrayAdapter<String> collAdapter = new ArrayAdapter<String>(getActivity(),R.layout.spin_item, colllist);
-                    collAdapter.notifyDataSetChanged();
-                    collAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-                    college.setAdapter(collAdapter);
+                    }
 
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
 
+                    }
 
-                }
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-                else if(pos==1)
-                {
-                    colllist.clear();
-                    colllist.add("Delhi University");
-                    colllist.add("IIT Delhi");
-                    colllist.add("SRM University NCR");
-                    colllist.add("NIT Delhi");
-                    colllist.add("Netaji Subhas Institute of Technology");
-                    colllist.add("Indraprastha Institute of Information Technology");
-                    colllist.add("Guru Gobind Singh Indraprastha University");
-                    colllist.add("Amity School of Engineering and Technology");
-                    colllist.add("Delhi Technological University");
-                    colllist.add("Bharati Vidyapeeth's College of Engineering");
+                    }
 
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-                    ArrayAdapter<String> collAdapter1 = new ArrayAdapter<String>(getActivity(), R.layout.spin_item, colllist);
-                    collAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    collAdapter1.notifyDataSetChanged();
-                    college.setAdapter(collAdapter1);
-                    college.setSelection(position);
+                    }
+                });
 
-                }
-else if(pos==2)
-                {
-                    colllist.clear();
-                    colllist.add("R.V College Of Engineering");
-                    colllist.add("IIIT Bangalore");
-                    colllist.add("BMS College Of Engineeirng");
-                    colllist.add("MS Ramaiah Institute Of Technology");
-                    colllist.add("PES University ");
-                    colllist.add("Bangalore Institute Of Technology");
-                    colllist.add("RNS Institute Of Technology ");
-                    colllist.add("SJB Institute Of Technology ");
-
-
-                    ArrayAdapter<String> collAdapter1 = new ArrayAdapter<String>(getActivity(), R.layout.spin_item, colllist);
-                    collAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    collAdapter1.notifyDataSetChanged();
-                    college.setAdapter(collAdapter1);
-                    college.setSelection(position);
-                }
-
-                else if(pos==3)
-                {
-                    colllist.clear();
-                    colllist.add("IIT Hyderabad");
-                    colllist.add("BITS Hyderabad");
-                    colllist.add("Vardhaman College Of Engineering");
-                    colllist.add("Vasavi College Of Engineering");
-                    colllist.add("CVR College Of Engineering");
-                    colllist.add("Chaitanya Bharathi Institute Of Technology");
-                    colllist.add("Mahamatma Gandhi Institute Of Technology");
-
-
-
-                    ArrayAdapter<String> collAdapter1 = new ArrayAdapter<String>(getActivity(), R.layout.spin_item, colllist);
-                    collAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    collAdapter1.notifyDataSetChanged();
-                    college.setAdapter(collAdapter1);
-                    college.setSelection(position);
-                }
             }
 
 

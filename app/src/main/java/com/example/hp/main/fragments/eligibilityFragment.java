@@ -17,7 +17,7 @@ import com.example.hp.main.adapters.elgibilityAdapter;
  * A simple {@link Fragment} subclass.
  */
 public class eligibilityFragment extends Fragment {
-
+//
     int cutoff;
     EditText ed;
     public eligibilityFragment() {

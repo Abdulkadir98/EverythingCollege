@@ -20,6 +20,6 @@ public class scholarshipActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+//
     }
 }

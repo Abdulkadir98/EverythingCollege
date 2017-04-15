@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.example.hp.main.ui.stateActivity;
 
 public class states_intro extends AppCompatActivity {
-
+//
         String value,value1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
