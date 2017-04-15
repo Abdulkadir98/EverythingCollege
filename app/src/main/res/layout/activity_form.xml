@@ -44,45 +44,91 @@
         android:inputType="textPersonName" />
     </LinearLayout>
 
-    <EditText
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="5dp"
+            android:src='@drawable/ic_envelope'/>
+
+
+        <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="Email"
         android:id="@+id/user_email"
         android:inputType="textEmailAddress" />
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_phone_receiver"/>
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="Phone"
+        android:layout_marginLeft="10dp"
         android:inputType="phone"
         android:id="@+id/user_phone_number"/>
 
-    <EditText
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="52dp"
+            android:src="@drawable/ic_notebook"/>
+        <EditText
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:gravity="top"
+            android:layout_marginLeft="10dp"
         android:hint="Address"
         android:fitsSystemWindows="true"
         android:breakStrategy="balanced"
         android:inputType="textMultiLine"
         android:singleLine="false"
         android:padding="5dp" />
-    <EditText
-        android:layout_width="fill_parent"
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:paddingBottom="20dp"
+        android:layout_marginBottom="20dp"
+        android:weightSum="1">
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="52dp"
+            android:src="@drawable/ic_percentage_discount"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="CGPA(10th)"
         android:inputType="numberDecimal"
-        android:id="@+id/user_cgpa"/>
-
+        android:layout_marginLeft="10dp"
+        android:id="@+id/user_cgpa"
+        android:paddingBottom="20dp" />
+</LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
