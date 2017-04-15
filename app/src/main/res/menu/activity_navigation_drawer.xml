@@ -25,6 +25,9 @@
         <item
             android:id="@+id/nav_fragment_predicter"
             android:title="Score Predictor"/>
+        <item
+            android:id="@+id/nav_form"
+            android:title="Form"/>
     </group>
 
 

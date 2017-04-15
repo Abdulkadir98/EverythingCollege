@@ -4,26 +4,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
-
-    <TextView
-        android:id="@+id/contact_form_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="5dp"
-        android:text="USER DETAILS"
-        android:textSize="40sp"
-        android:typeface="serif"
-        />
-
+<!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal">-->
+    <!--<ImageView-->
+        <!--android:layout_width="48dp"-->
+        <!--android:layout_height="48dp" />-->
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/contact_form_title"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_gravity="center_horizontal"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginLeft="5dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginBottom="16dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginTop="5dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="USER DETAILS"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textSize="32sp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:typeface="serif"&ndash;&gt;-->
+        <!--&lt;!&ndash;/>&ndash;&gt;-->
+    <!--</LinearLayout>-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/ic_add_user_icon"
+        android:id="@+id/user_profile_image"/>
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="Name"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="5dp"
         android:id="@+id/user_name"
         android:inputType="textPersonName" />
+    </LinearLayout>
 
     <EditText
         android:layout_width="fill_parent"
@@ -45,17 +64,24 @@
 
     <EditText
         android:layout_width="fill_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:gravity="top"
-        android:hint="Your Message"
+        android:hint="Address"
         android:fitsSystemWindows="true"
         android:breakStrategy="balanced"
         android:inputType="textMultiLine"
         android:singleLine="false"
         android:padding="5dp" />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:hint="CGPA(10th)"
+        android:inputType="numberDecimal"
+        android:id="@+id/user_cgpa"/>
 
     <Button
         android:layout_width="wrap_content"

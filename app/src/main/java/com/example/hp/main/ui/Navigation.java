@@ -138,6 +138,10 @@ static int i=1;
         else if (id== R.id.nav_fragment_predicter){
             f.beginTransaction().replace(R.id.content_frame, new PredicterFragment()).commit();
         }
+        else if(id==R.id.nav_form){
+            Intent intent = new Intent(this,Form.class);
+            startActivity(intent);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
