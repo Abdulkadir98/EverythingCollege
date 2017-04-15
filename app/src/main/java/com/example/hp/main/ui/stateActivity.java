@@ -1,9 +1,13 @@
-package com.example.hp.main;
+package com.example.hp.main.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+
+import com.example.hp.main.R;
+import com.example.hp.main.adapters.topHundreduniversitiesAdapter;
+import com.example.hp.main.models.topHundred;
 
 import java.util.ArrayList;
 

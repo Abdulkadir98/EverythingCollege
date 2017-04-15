@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.fragments;
 
 
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.hp.main.R;
+import com.example.hp.main.adapters.elgibilityAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

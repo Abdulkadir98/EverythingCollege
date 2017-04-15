@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:label">
         <activity
-            android:name=".SplashScreen"
+            android:name=".ui.SplashScreen"
             android:noHistory="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
@@ -23,36 +23,37 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".topHundredActivity"
+            android:name=".ui.topHundredActivity"
             android:label="Top100"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".searchActivity"
+            android:name=".ui.searchActivity"
             android:label="Search A College"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".examsActivity"
+            android:name=".ui.examsActivity"
             android:label="Entrance Exams"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".eligibilityActivity"
+            android:name=".ui.eligibilityActivity"
             android:label="Eligiblity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".elgibilityAdapter" />
+            android:parentActivityName=".ui.MainActivity" />
+        <activity android:name=".adapters.elgibilityAdapter" />
         <activity
-            android:name=".scholarshipActivity"
+            android:name=".ui.scholarshipActivity"
             android:label="Scholarships"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".stateActivity" />
+            android:parentActivityName=".ui.MainActivity" />
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.stateActivity" />
         <activity android:name=".states_intro" />
         <activity
             android:name=".SearchResult"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".Navigation"
+            android:name=".ui.Navigation"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.Form"></activity>
     </application>
 
 </manifest>

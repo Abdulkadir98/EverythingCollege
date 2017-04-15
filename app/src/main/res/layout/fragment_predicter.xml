@@ -3,7 +3,7 @@
     xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hp.main.PredicterFragment">
+    tools:context="com.example.hp.main.fragments.PredicterFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

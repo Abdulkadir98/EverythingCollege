@@ -1,10 +1,13 @@
-package com.example.hp.main;
+package com.example.hp.main.ui;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.hp.main.R;
+import com.example.hp.main.adapters.SimpleFragmentPagerAdapter;
 
 public class MainActivity extends AppCompatActivity  {
     private static final String COLLEGE_WEBSITE_URL = "https://data.gov.in/api/datastore/resource.json?resource_id=44bea382-c525-4740-8a07-04bd20a99b52";

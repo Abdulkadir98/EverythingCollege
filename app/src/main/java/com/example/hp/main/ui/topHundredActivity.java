@@ -1,10 +1,13 @@
-package com.example.hp.main;
+package com.example.hp.main.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.hp.main.R;
+import com.example.hp.main.fragments.topHundredFragment;
 
 public class topHundredActivity extends AppCompatActivity  {
 

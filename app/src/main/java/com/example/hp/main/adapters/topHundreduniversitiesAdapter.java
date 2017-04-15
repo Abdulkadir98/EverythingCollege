@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.hp.main.R;
+import com.example.hp.main.models.topHundred;
 import com.vstechlab.easyfonts.EasyFonts;
 
 import java.util.ArrayList;
