@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import static android.R.attr.value;
+import com.example.hp.main.ui.stateActivity;
 
 public class states_intro extends AppCompatActivity {
 

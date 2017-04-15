@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.fragments;
 
 
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.hp.main.R;
 
 import java.util.ArrayList;
 import java.util.List;

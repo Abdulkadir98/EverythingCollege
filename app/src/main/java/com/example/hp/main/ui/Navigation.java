@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,13 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static android.R.attr.id;
+import com.example.hp.main.R;
+import com.example.hp.main.fragments.PredicterFragment;
+import com.example.hp.main.fragments.eligibilityFragment;
+import com.example.hp.main.fragments.examsFragment;
+import com.example.hp.main.fragments.scholarshipsFragment;
+import com.example.hp.main.fragments.searchFragment;
+import com.example.hp.main.fragments.topHundredFragment;
 
 public class Navigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

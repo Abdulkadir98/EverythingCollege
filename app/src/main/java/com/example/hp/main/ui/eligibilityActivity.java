@@ -1,10 +1,13 @@
-package com.example.hp.main;
+package com.example.hp.main.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class searchActivity extends AppCompatActivity {
+import com.example.hp.main.R;
+import com.example.hp.main.fragments.eligibilityFragment;
 
+
+public class eligibilityActivity extends AppCompatActivity {
 
 
     @Override
@@ -12,13 +15,8 @@ public class searchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new searchFragment())
+                .replace(R.id.container, new eligibilityFragment())
                 .commit();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
     }
-
 }
-

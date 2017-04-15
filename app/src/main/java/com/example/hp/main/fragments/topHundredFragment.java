@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.fragments;
 
 
 import android.content.Intent;
@@ -18,6 +18,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.hp.main.R;
+import com.example.hp.main.TopCollegesLoader;
+import com.example.hp.main.adapters.topHundreduniversitiesAdapter;
+import com.example.hp.main.models.topHundred;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;

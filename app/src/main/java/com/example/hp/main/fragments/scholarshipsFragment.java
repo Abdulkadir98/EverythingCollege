@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.fragments;
 
 
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.example.hp.main.R;
+import com.example.hp.main.adapters.scholarshipsAdapter;
+import com.example.hp.main.models.topHundred;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;

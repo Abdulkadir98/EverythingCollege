@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.fragments;
 
 
 import android.os.Bundle;
@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.hp.main.R;
+import com.example.hp.main.utility.Utility;
 
 import java.util.ArrayList;
 
@@ -152,25 +155,21 @@ public class PredicterFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                String sc = enterScore.getText().toString().trim();
-                if(sc==null){
-                    Toast.makeText(getContext(), "You have to enter a score!", Toast.LENGTH_SHORT).show();
-
-                }
-                else {
-
-                    Double score = Double.parseDouble(sc);
-                    if (score != null) {
+                try {
+                    Double score = Double.parseDouble(enterScore.getText().toString().trim());
+                    if ( score > 0 && score != null) {
                         testScores.add(score);
                         Log.i(TAG, "Score: " + testScores);
                         enterScore.setText("");
                         Toast.makeText(getContext(), "Added score", Toast.LENGTH_SHORT).show();
 
 
-                    } else {
-                        Toast.makeText(getContext(), "You can add only five scores", Toast.LENGTH_SHORT).show();
                     }
+                }catch (NumberFormatException e){
+                    e.printStackTrace();
+                    Toast.makeText(getContext(),"You have to enter a score", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
         displayPrediction.setOnClickListener(new View.OnClickListener() {

@@ -1,8 +1,13 @@
-package com.example.hp.main;
+package com.example.hp.main.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.example.hp.main.fragments.eligibilityFragment;
+import com.example.hp.main.fragments.scholarshipsFragment;
+import com.example.hp.main.fragments.searchFragment;
+import com.example.hp.main.fragments.topHundredFragment;
 
 /**
  * Created by admin on 2/12/2017.

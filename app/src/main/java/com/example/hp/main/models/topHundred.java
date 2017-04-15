@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.models;
 
 import android.net.Uri;
 

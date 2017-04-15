@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.adapters;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,9 +9,11 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.hp.main.R;
+import com.example.hp.main.ui.eligibilityActivity;
+import com.example.hp.main.models.topHundred;
 
-import static android.content.Context.MODE_PRIVATE;
+import java.util.ArrayList;
 
 public class elgibilityAdapter extends AppCompatActivity {
     int cutoff1,k;

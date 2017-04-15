@@ -1,4 +1,4 @@
-package com.example.hp.main;
+package com.example.hp.main.utility;
 
 import org.apache.commons.math3.distribution.TDistribution;
 import org.apache.commons.math3.stat.descriptive.moment.Mean;

@@ -1,14 +1,12 @@
-package com.example.hp.main;
+package com.example.hp.main.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 
+import com.example.hp.main.R;
+import com.example.hp.main.fragments.examsFragment;
 
-public class eligibilityActivity extends AppCompatActivity {
+public class examsActivity extends AppCompatActivity {
 
 
     @Override
@@ -16,8 +14,12 @@ public class eligibilityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new eligibilityFragment())
+                .replace(R.id.container, new examsFragment())
                 .commit();
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
 }
