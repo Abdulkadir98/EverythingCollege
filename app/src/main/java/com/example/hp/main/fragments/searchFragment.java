@@ -48,8 +48,8 @@ private TextView mAboutUs, mAboutUsBody;
         View rootView = inflater.inflate(R.layout.activity_search, container, false);
         city= (Spinner) rootView.findViewById(R.id.spinnercity);
         college=(Spinner) rootView.findViewById(R.id.spinnercollege);
-        citylist= new ArrayList<String>();
-        colllist=new ArrayList<String>();
+        citylist= new ArrayList<>();
+        colllist=new ArrayList<>();
         citylist.add("Chennai");
         citylist.add("New Delhi");
         citylist.add("Bangalore");
@@ -73,24 +73,28 @@ private TextView mAboutUs, mAboutUsBody;
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
                 parent.getItemAtPosition(pos);
                 DatabaseReference ref= FirebaseDatabase.getInstance().getReference();
+                final String cityn= city.getSelectedItem().toString();
+                colllist.clear();
                 ref.child("Colleges").addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                         College c= dataSnapshot.getValue(College.class);
-                        String cityn= city.getSelectedItem().toString();
+
+
                         if(cityn.equals(c.getCity()))
                         {
-                              colllist.clear();
+
                             colllist.add(c.getName()+"");
                             ArrayAdapter<String> collAdapter = new ArrayAdapter<String>(getActivity(),R.layout.spin_item, colllist);
+                            college.setAdapter(collAdapter);
                             collAdapter.notifyDataSetChanged();
                             collAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-                            college.setAdapter(collAdapter);
+
                         }
                         else
                         {
-                            colllist.clear();
+                           // colllist.clear();
                         }
                     }
 
